@@ -23,7 +23,7 @@ The default set of text file extensions includes:
 
 ```julia
 using RepoPacker
-RepoPacker.TEXT_FILE_EXTENSIONS
+@show RepoPacker.TEXT_FILE_EXTENSIONS
 ```
 
 ## Excluding Paths
@@ -58,20 +58,6 @@ RepoPacker.neglect_path("docs/")
 # Exclude files in a specific subdirectory
 RepoPacker.neglect_path("src/legacy/")
 ```
-
-## Checking File Types
-
-You can check if a file would be considered a text file by RepoPacker:
-
-```julia
-using RepoPacker
-
-RepoPacker.is_text_file("src/RepoPacker.jl")  # returns true
-RepoPacker.is_text_file("docs/logo.png")      # returns false
-```
-
-
-
 
 ## Empty Directory Handling
 

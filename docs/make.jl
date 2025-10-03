@@ -5,6 +5,7 @@ DocMeta.setdocmeta!(RepoPacker, :DocTestSetup, :(using RepoPacker); recursive=tr
 
 makedocs(;
     modules=[RepoPacker],
+    checkdocs = :exports,
     authors="imohag9 <souidi.hamza90@gmail.com> and contributors",
     sitename="RepoPacker.jl",
     format=Documenter.HTML(;
