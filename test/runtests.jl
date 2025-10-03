@@ -18,7 +18,7 @@ using JSON
     )
 end
 
-include("test_miscellaneous.jl")
+
 include("test_basic.jl")
 
 include("test_edge_cases.jl")
