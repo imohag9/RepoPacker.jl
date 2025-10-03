@@ -2,7 +2,7 @@
 """
     generate_json_content(text_files::Vector{String}, base_dir::AbstractString; verbose::Bool=false)
 
-Generate repository content in Repomix-compatible JSON format.
+Generate repository content in Repomix-inspired JSON format.
 
 # Returns
 - String containing valid JSON with keys: `fileSummary`, `directoryStructure`, `files`, `metrics`
@@ -19,7 +19,7 @@ function generate_json_content(text_files::Vector{String}, base_dir::AbstractStr
         "purpose" => "This file contains a packed representation of the entire repository's contents.\nIt is designed to be easily consumable by AI systems for analysis, code review,\nor other automated processes.",
         "fileFormat" => "The content is organized as follows:\n1. This summary section\n2. Repository information\n3. Directory structure\n4. Repository files (if enabled)\n5. Key-value mapping of file paths to contents",
         "usageGuidelines" => "- This file should be treated as read-only. Any changes should be made to the\n  original repository files, not this packed version.\n- When processing this file, use the file path to distinguish\n  between different files in the repository.\n- Be aware that this file may contain sensitive information. Handle it with\n  the same level of security as you would the original repository.",
-        "notes" => "- Some files may have been excluded based on .gitignore rules and Repomix's configuration\n- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files\n- Files matching patterns in .gitignore are excluded\n- Files matching default ignore patterns are excluded\n- Security check has been disabled - content may contain sensitive information"
+        "notes" => "- Some files may have been excluded based on .gitignore rules and RepoPacker's configuration\n- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files\n- Files matching patterns in .gitignore are excluded\n- Files matching default ignore patterns are excluded\n- content may contain sensitive information"
     )
 
     # === directoryStructure ===

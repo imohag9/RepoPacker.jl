@@ -2,7 +2,7 @@
 """
     generate_markdown_content(text_files::Vector{String}, base_dir::AbstractString; verbose::Bool=false)
 
-Generate repository content in Repomix-compatible Markdown format.
+Generate repository content in Repomix-inspired Markdown format.
 """
 function generate_markdown_content(text_files::Vector{String}, base_dir::AbstractString; verbose::Bool=false)
     logger = verbose ? ConsoleLogger(stderr, Logging.Info) : NullLogger()

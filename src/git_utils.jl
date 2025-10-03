@@ -96,7 +96,7 @@ No text files were found in the repository.
 """
             write(output_file, empty_md)
         else
-            header = """This file is a merged representation of the entire codebase, combined into a single document by Repomix.\nThe content has been processed where security check has been disabled.\n"""
+            header = """This file is a merged representation of the entire codebase, combined into a single document by RepoPacker.\nThe content has been processed where security check has been disabled.\n"""
             empty_xml = "<files><file_summary><purpose>No text files were found in the repository</purpose></file_summary></files>"
             write(output_file, header * empty_xml)
         end

@@ -62,7 +62,7 @@ function generate_xml_content(text_files::Vector{String}, base_dir::AbstractStri
     push!(XML.children(file_summary), metrics)
     
     notes = XML.Element("notes")
-    push!(XML.children(notes), XML.Text("- Some files may have been excluded based on .gitignore rules and Repomix's configuration\n- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files\n- Files matching patterns in .gitignore are excluded\n- Files matching default ignore patterns are excluded\n- Security check has been disabled - content may contain sensitive information\n- Files are sorted by Git change count (files with more changes are at the bottom)"))
+    push!(XML.children(notes), XML.Text("- Some files may have been excluded based on .gitignore rules and RepoPacker's configuration\n- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files\n- Files matching patterns in .gitignore are excluded\n- Files matching default ignore patterns are excluded\n- Security check has been disabled - content may contain sensitive information\n"))
     push!(XML.children(file_summary), notes)
     
     # === directory_structure section ===
@@ -89,7 +89,7 @@ function generate_xml_content(text_files::Vector{String}, base_dir::AbstractStri
     end
     
     xml_str = XML.write(root)
-    header = """This file is a merged representation of the entire codebase, combined into a single document by Repomix.\nThe content has been processed where security check has been disabled.\n"""
+    header = """This file is a merged representation of the entire codebase, combined into a single document by RepoPacker.jl.\nThe content has been processed where security check has been disabled.\n"""
     
     return header * xml_str
 end
