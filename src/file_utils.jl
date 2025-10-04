@@ -360,7 +360,7 @@ function get_directory_structure(dir_path::AbstractString; verbose::Bool=false)
 end
 
 # Internal function for testing - resets global state
-function _reset!()
+function reset!()
     empty!(NEGLECT_PATHS)
     copy!(TEXT_FILE_EXTENSIONS, Set{String}([
     ".py",      # Python

@@ -86,7 +86,7 @@
     @test length(many_files) >= 101  # Original files + 100 new ones
 
     # Test file with non-UTF8 content
-    RepoPacker._reset!()
+    RepoPacker.reset!()
     RepoPacker.add_extension(".bin")
 
     non_utf8_file = joinpath(test_dir, "non_utf8.bin")

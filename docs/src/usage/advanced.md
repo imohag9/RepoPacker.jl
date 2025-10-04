@@ -75,4 +75,38 @@ RepoPacker.pack_directory(empty_dir, "empty.xml")
 # The resulting file will contain a message indicating no text files were found
 ```
 
-This ensures that the output file is always valid, even when no content is available.
+## Advanced Path Neglect and Resetting
+
+### NEGLECT_PATHS
+
+The `NEGLECT_PATHS` constant is a global set of paths (files or directories) that will be excluded from the packing process. You can add paths to this set using the `neglect_path()` function, as described above.
+
+```julia
+using RepoPacker
+
+# Exclude specific paths
+RepoPacker.neglect_path("test/")
+RepoPacker.neglect_path(".env")
+```
+
+These paths are matched as substrings in the full file path during the collection process.
+
+You can always access it :
+
+```julia
+using RepoPacker
+@show RepoPacker.NEGLECT_PATHS
+```
+
+### Resetting Configuration
+
+For testing or other advanced scenarios, you might need to reset the global state of RepoPacker, including the `NEGLECT_PATHS` and the list of recognized text file extensions. The `reset!()` function is provided for this purpose.
+
+```julia
+using RepoPacker
+
+# Reset all configurations to default
+RepoPacker.reset!()
+```
+
+**Warning:** This function  clears all custom configurations and resets to the default state.

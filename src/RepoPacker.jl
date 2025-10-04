@@ -16,6 +16,6 @@ include("git_utils.jl")
 
 export add_extension, neglect_path, 
     clone_and_pack, pack_directory,
-    TEXT_FILE_EXTENSIONS
+    TEXT_FILE_EXTENSIONS,reset!,NEGLECT_PATHS
 
 end # module
