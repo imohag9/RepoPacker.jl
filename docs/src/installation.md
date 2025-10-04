@@ -17,7 +17,7 @@ If you want the latest development version, you can install directly from GitHub
 
 ```julia
 using Pkg
-Pkg.add(url="https://github.com/yourusername/RepoPacker.jl.git")
+Pkg.add(url="https://github.com/imohag9/RepoPacker.jl.git")
 ```
 
 ## Verifying Installation
